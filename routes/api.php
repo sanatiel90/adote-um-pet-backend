@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\AdocaoController;
+use App\Http\Controllers\PersonController;
 use App\Http\Controllers\PetController;
+use App\Http\Controllers\SkillController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -26,3 +28,11 @@ Route::post('/pets', [PetController::class, 'store']);
 Route::get('/adocoes', [AdocaoController::class, 'index']);
 Route::post('/adocoes', [AdocaoController::class, 'store']);
 
+Route::get('/persons', [PersonController::class, 'index']);
+Route::get('/persons/{id}', [PersonController::class, 'show']);
+Route::post('/persons', [PersonController::class, 'store']);
+Route::put('/persons/{id}', [PersonController::class, 'update']);
+
+Route::get('/skills', [SkillController::class, 'index']);
+Route::post('/skills', [SkillController::class, 'store']);
+Route::get('/skills/{id}', [SkillController::class, 'show']);
